@@ -7,10 +7,10 @@
         <script src="script.js"></script>
     </head>
     <body>
-    <p>Ecrire une fonction qui calcul la moyenne d’un tableau qu’on passe en paramètre et qui
-       retourne ce résultat dans une variable. Afficher le contenue de cette variable en bas de
-       page.
-    </p>   
+        <p>Ecrire une fonction qui calcul la moyenne d’un tableau qu’on passe en paramètre et qui
+        retourne ce résultat dans une variable. Afficher le contenue de cette variable en bas de
+        page.
+        </p>   
         <?php function Mafonction($tableau)
         {
             $somme = 0;
