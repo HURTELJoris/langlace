@@ -25,6 +25,8 @@
     
         $GLOBALS["pdo"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
     
+
+        
         $requete = "select * from Medecin";
         $resultat = $GLOBALS["pdo"]->query($requete);
         //resultat est du coup un objet de type PDOStatement
@@ -40,30 +42,18 @@
             </select>
        
         <?php
-        $requete2 = "select * from Patient";
-        $resultat2 = $GLOBALS["pdo"]->query($requete2);
+
+
+        $requete5 = "select * from Secretaire";
+        $resultat5 = $GLOBALS["pdo"]->query($requete5);
         //resultat est du coup un objet de type PDOStatement
-        $tabPatient = $resultat2->fetchALL();
+        $tabSecretaire = $resultat5->fetchALL();
         ?>
     
-            <select name = "IdPatient">
+            <select name = "laSecretaire">
                 <?php
-                foreach ($tabPatient as $Patient) {
-                echo '<option value="'.$Patient["id"].'"> '.$Patient["nom"]." ".$Patient["prenom"].'</option>';
-                }
-                ?>
-            </select>
-        <?php
-        $requete3 = "select * from Consultation";
-        $resultat3 = $GLOBALS["pdo"]->query($requete3);
-        //resultat est du coup un objet de type PDOStatement
-        $tabDate = $resultat3->fetchALL();
-        ?>
-    
-            <select name = "IdDate">
-                <?php
-                foreach ($tabDate as $Consultation) {
-                echo "<option value=".$Consultation['Dateheure']."> ".$Consultation['Dateheure']."</option>";
+                foreach ($tabSecretaire as $Secretaire) {
+                echo "<option value=".$Secretaire['id']."> ".$Secretaire['nom']." ".$Secretaire['prenom']."</option>";
                 }
                 ?>
             </select>
@@ -76,7 +66,7 @@
 
     <?php
 
-    if(isset($_POST["Valider"]))
+    if(isset($_POST["ValiderR"]))
     {
         echo "Votre id de Medecin est : ".$_POST["IdMedecin"]."  Celui du patient est : ".$_POST["IdPatient"]." La date est : ".$_POST["IdDate"];
         ?>
@@ -93,7 +83,53 @@
         $resultat4 = $GLOBALS["pdo"]->query($requete4);
         //resultat est du coup un objet de type PDOStatement
 
+        $requete2 = "select * from Patient";
+        $resultat2 = $GLOBALS["pdo"]->query($requete2);
+        //resultat est du coup un objet de type PDOStatement
+        $tabPatient = $resultat2->fetchALL();
+        ?>
+    
+            <select name = "IdPatient">
+                <?php
+                foreach ($tabPatient as $Patient) {
+                echo '<option value="'.$Patient["id"].'"> '.$Patient["nom"]." ".$Patient["prenom"].'</option>';
+                }
+                ?>
+            </select>
+            
+        <?php
+         $requete3 = "select * from Consultation";
+         $resultat3 = $GLOBALS["pdo"]->query($requete3);
+         //resultat est du coup un objet de type PDOStatement
+         $tabDate = $resultat3->fetchALL();
+         ?>
+     
+             <select name = "IdDate">
+                 <?php
+                 foreach ($tabDate as $Consultation) {
+                 echo "<option value=".$Consultation['Dateheure']."> ".$Consultation['Dateheure']."</option>";
+                 }
     }
+
+
+    if(isset($_POST["Valider"]))
+    {
+        echo "Votre id de Medecin est : ".$_POST["IdMedecin"]."  Celui de la secretaire est : ".$_POST["laSecretaire"];
+        ?>
+        <p>
+            <form action="" method="post" class="form-example">
+                <div class="form-example">
+                    <input type="submit" value="Deconnexion" name="Deconnexion" >
+                </div>
+            </form>
+        </p>
+        <?php
+        $requete4 = "UPDATE `Medecin` SET idSecretaire = '".$_POST["laSecretaire"]."' WHERE Medecin.id = ".$_POST["IdMedecin"]."";
+        $resultat4 = $GLOBALS["pdo"]->query($requete4);
+        //resultat est du coup un objet de type PDOStatement
+    }
+
+    
     } catch (Exception  $error) {
         echo "error est : ".$error->getMessage();
     }
