@@ -1,0 +1,18 @@
+table, td, th {
+    border: 1px solid;
+  }
+
+.table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 225px;
+    background-color: rgb(226, 213, 230);
+  }
+  
+.td {
+    padding-bottom: 50px;
+}
+
+.bouge {
+    padding-bottom: 50%;
+}

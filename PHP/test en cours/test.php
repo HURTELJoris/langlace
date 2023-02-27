@@ -5,7 +5,7 @@
         <title>test php</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
-        <link rel="icon" type="image/ico" sizes="700x700" href="./icone">
+        <link rel="icon" type="image/ico" sizes="700x700" href="../img/icone.jpg">
     </head>
 
     <body>
