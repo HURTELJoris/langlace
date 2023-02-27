@@ -37,7 +37,6 @@
                 //Si on est connecté, alors on affiche "Bienvenue sur le site", avec un bouton de déconnexion.
             ?>       
                 <p>Bienvenue sur le site</p>
-                <a href="https://www.youtube.com/@MonsieurRapidecho">lien secret</a>
                 <form action="" method="post" class="form-example">
                     <div class="form-example">
                         <input type="submit" value="Deconnexion" name="Deconnexion" >
