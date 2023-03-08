@@ -34,6 +34,12 @@ function sapristi(){
   MaDiv.addEventListener("click", UneProcedureQuiChangeLetext);
   function UneProcedureQuiChangeLetext(evenement){
     evenement.target.className = "rouge";
+
+  }
+  var MaDiv2 = document.getElementById("div2");
+  MaDiv2.addEventListener("mouseover", UneProcedureQuiChangeLetext2);
+  function UneProcedureQuiChangeLetext2(evenement){
+    evenement.target.className = "rouge2";
   }
 }
 test();

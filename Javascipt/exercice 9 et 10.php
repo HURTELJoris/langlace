@@ -11,6 +11,7 @@
         <div>Coucou3</div>
         <div class="titi">Coucou</div>
         <div id="div1">Je suis La Div Num 1</div>
+        <div id="div2">Je suis La Div Num 2</div>
     </body>
     <script src="yyy.js"></script>
 </html>
