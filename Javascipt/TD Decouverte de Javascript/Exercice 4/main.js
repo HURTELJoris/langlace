@@ -1,7 +1,7 @@
 var tab = [-2,1,4];
 
 function additionne(x) {
-  x = x + 2;
+  x += 2;
   return x;
 }
 

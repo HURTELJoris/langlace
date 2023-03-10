@@ -1,8 +1,8 @@
 var a = 2;
 var b = 3;
 
-function multiplie(x = 8,) {
-  x = x * 3;
+function multiplie(x = 8) {
+  x *= 3;
   return x;
 }
 
