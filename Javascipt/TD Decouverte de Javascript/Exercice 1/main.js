@@ -1,7 +1,7 @@
 function mafunction(){
   var MaDiv = document.getElementById("exercice1");
-  MaDiv.addEventListener("click",AirePerimetreCercle);
-  function AirePerimetreCercle(event) {
+  MaDiv.addEventListener("click",AirePerimetreRectangle);
+  function AirePerimetreRectangle(event) {
     let longueur = prompt("Selectionez la longueur : ");
     let largeur = prompt("Selectionez la largeur : ");
     let aire = longueur*largeur;
