@@ -2,8 +2,8 @@ var a = 2;
 var b = 3;
 
 function multiplie(x = 8,) {
-  let resultat = x * 3;
-  return resultat;
+  x = x * 3;
+  return x;
 }
 
 function mafunction(){

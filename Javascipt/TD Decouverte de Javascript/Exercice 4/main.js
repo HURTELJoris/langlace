@@ -1,13 +1,18 @@
-function mafunction(){
-  var MaDiv = document.getElementById("exercice2");
-  MaDiv.addEventListener("click",AirePerimetreCercle);
-  function AirePerimetreCercle(event) {
-    let longueur = prompt("Selectionez la longueur : ");
-    let perimetre = 2*Math.PI * longueur;
-    let aire = longueur * longueur * Math.PI; 
-    alert("Le perimetre du cercle est de : "+perimetre);
-    alert("L'aire du cercle est de : "+aire);
+var tab = [-2,1,4];
+
+function additionne(x) {
+  x = x + 2;
+  return x;
+}
+
+function affiche(){
+  var MaDiv = document.getElementById("exercice4");
+  MaDiv.addEventListener("click",Additionnetab);
+  function Additionnetab(event) {
+    alert("Additionne tab[0] : "+additionne(tab[length-length]));
+    alert("Additionne tab[1] : "+additionne(tab[length-length+1]));
+    alert("Additionne tab[2] : "+additionne(tab[length-length+2]));
   }
 }
 
-mafunction();
+affiche();
