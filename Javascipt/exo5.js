@@ -1,6 +1,12 @@
 function mafonction(){
    //pour appeler une API on utilise la méthode fetch()
-   fetch('exercice.api.php').then((resp) => resp.json())
+   var myInit = { method: 'POST',
+               mode: 'cors',
+               cache: 'default', 
+               name: 'tata',
+               };
+
+   fetch('exercice.api.php',myInit).then((resp) => resp.json())
    .then(function(data) {
    // data est la réponse http de notre API.
    console.log(data);
