@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Exercice 6</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/ico" sizes="700x700" href="../../icone.jpg">
     </head>
     <body>
         <button id="exercice6">Clique moi dessus</div>
