@@ -1,6 +1,8 @@
 <?php
 session_start();
 $_SESSION["trueconnect"] = false;
+include("User.php");
+$utilisateur = new User(null,null,null,null);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +29,10 @@ $_SESSION["trueconnect"] = false;
             if(isset($_POST["register"]) && $_POST["password"] == $_POST["password2"])
             {
     
+                $utilisateur->inscription($_POST["pseudo"],$_POST["email"],$_POST["password"]);
+
+/*
+
                 $requete4 = "INSERT INTO `user`(pseudo, email, mdp) VALUES ('" .$_POST["pseudo"]. "','".$_POST["email"]."','".$_POST["password"]."')";
                 $resultat4 = $GLOBALS["pdo"]->query($requete4);
                 //resultat est du coup un objet de type PDOStatement
@@ -38,6 +44,8 @@ $_SESSION["trueconnect"] = false;
                     window.location.replace("ToDoList/TODOLIST.php");
                 </script>
                 <?php
+
+*/
 
             }
         

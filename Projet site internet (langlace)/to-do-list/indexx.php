@@ -1,6 +1,8 @@
 <?php
 session_start();
 $_SESSION["trueconnect"] = false;
+include("User.php");
+$utilisateur = new User(null,null,null,null);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +33,9 @@ $_SESSION["trueconnect"] = false;
 
         if (isset($_POST["login"])) {
 
+            $utilisateur->connexion($_POST["email"],$_POST["password"]);
+/*
+
             // $requete = "select * from user";
             $requete = "select * from user where `email` = '" . $_POST["email"] . "' && `mdp` = '" . $_POST["password"] . "'";
             $resultat = $GLOBALS["pdo"]->query($requete);
@@ -45,10 +50,14 @@ $_SESSION["trueconnect"] = false;
                     window.location.replace("ToDoList/TODOLIST.php");
                 </script>
     <?php
+           
             } else {
                 $erreur = 1;
             }
+
+*/
         }
+        
     } catch (Exception  $error) {
         echo "error est : " . $error->getMessage();
     }
@@ -83,12 +92,12 @@ $_SESSION["trueconnect"] = false;
                     <?php
                     }
                     ?>
-                    <div class="password">
+                    <div class="password" namr="redirectpassword">
                         <p><a href="cpasbien.php">Forget Password ?</a></p>
 
                     </div>
                     <button name="login">Log in</button>
-                    <div class="register">
+                    <div class="register" name="redirectregister">
                         <p>Don't have a account ? <a href="register.php">Register</a></p>
                     </div>
                 </form>

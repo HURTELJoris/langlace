@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="./css/main.css">
   <link rel="icon" type="image/ico" sizes="700x700" href="./icone.jpg">
   <title>Forget Password</title>
 </head>
