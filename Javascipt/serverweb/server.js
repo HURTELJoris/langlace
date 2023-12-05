@@ -6,7 +6,7 @@ const mysql = require('mysql');
 
 // Configuration de la connexnion à la base de données (Lucas)
 const connection = mysql.createConnection({
-  host: '192.169.65.167', // L'hôte de la base de données
+  host: '192.168.65.167', // L'hôte de la base de données
   user : 'apiWeb', // Votre nom d'utilisateur MySQL
   password : 'apiWeb', // Votre mot de passe MySQL
   database : 'reactTuto' // Le nom de votre base de données
