@@ -3,17 +3,26 @@ import React, { useState } from 'react';
 const FunctionnalComponent = ({ couleur }) => {
     const [color, setColor] = useState(couleur);
 
-    const changeColor = () => {
-        const newColor = color === 'red' ? 'blue' : 'red';
-        setColor(newColor);
+    const getRandomColor = () => {
+        // Génère des valeurs aléatoires pour R, G, B entre 0 et 255
+        const randomR = Math.floor(Math.random() * 256);
+        const randomG = Math.floor(Math.random() * 256);
+        const randomB = Math.floor(Math.random() * 256);
+
+        // Crée une chaîne de couleur RGB avec les valeurs aléatoires
+        const randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+        
+        // Met à jour la couleur d'état avec la nouvelle couleur aléatoire
+        setColor(randomColor);
     };
 
     return (
+
         <div>
-            <div style={{ color }}>
-              Je suis un composant
+            <div>
+                <p style={{ color , display : 'inline'}} onMouseOver={getRandomColor} >Je suis un composant</p>
             </div>
-            <button onClick={changeColor}>Changer la couleur</button>
+            <button onMouseOver={getRandomColor}>Changer la couleur</button>
         </div>
     );
 };
