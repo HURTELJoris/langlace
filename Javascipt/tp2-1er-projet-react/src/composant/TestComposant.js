@@ -22,7 +22,7 @@ const FunctionnalComponent = ({ couleur }) => {
             <div>
                 <p style={{ color , display : 'inline'}} onMouseOver={getRandomColor} >Je suis un composant</p>
             </div>
-            <button onMouseOver={getRandomColor}>Changer la couleur</button>
+            <button>Changer la couleur</button>
         </div>
     );
 };
